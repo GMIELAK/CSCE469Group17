@@ -1,4 +1,4 @@
-# CSCE469Group17 — Local Vault (Postgres default)
+# CSCE469Group17 — Local Vault
 
 This project is intended to run locally. The README defaults to PostgreSQL.
 
@@ -15,7 +15,7 @@ Create `local-vault/backend/.env` with this content (update user/password/host/p
 
 ```env
 DATABASE_URL="postgresql://postgres:your_password@localhost:5432/local_vault?schema=public"
-JWT_SECRET="a_super_secret_key"
+JWT_SECRET="a_key"
 ```
 
 ## 3) Database (no external DB required for development)
