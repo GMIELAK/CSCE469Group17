@@ -1,0 +1,50 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // rootDir needs to include prisma.config.ts which lives at project root
+    "rootDir": ".",
+    "outDir": "dist",
+
+    // Environment Settings
+    // Use Node ESM resolution so imports like `dotenv/config` are found.
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "es2020",
+    "lib": ["es2020"],
+    "types": ["node"],
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+  // Recommended Options
+  "strict": true,
+    "jsx": "react-jsx",
+  "verbatimModuleSyntax": true,
+  "moduleDetection": "force",
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+  // remove allowImportingTsExtensions since it's only valid with noEmit/emitDeclarationOnly
+    "skipLibCheck": true,
+
+    "esModuleInterop": true,
+  }
+}
