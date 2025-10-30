@@ -18,11 +18,9 @@ DATABASE_URL="postgresql://postgres:your_password@localhost:5432/local_vault?sch
 JWT_SECRET="a_key"
 ```
 
-## 3) Database (no external DB required for development)
+## 3) Database
 
-This project has been simplified for fast local development: the backend uses a small file-backed JSON store by default so you don't need Postgres or Prisma to start developing.
-
-If you want a real Postgres database for integration testing or production, you can still add one and wire it in, but it's not required to run the app locally.
+ The backend uses a small file-backed JSON store by default so you don't need Postgres to develop.
 
 
 ## 4) Start the backend
