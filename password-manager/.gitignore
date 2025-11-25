@@ -1,0 +1,5 @@
+node_modules/
+password_manager.db
+.DS_Store
+*.log
+npm-debug.log*
