@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Password Manager - App</title>
+  <link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>My Credentials</h1>
+      <form id="logoutForm">
+        <button type="submit" class="secondary">Logout</button>
+      </form>
+    </header>
+
+    <section class="card">
+      <h2>Add New</h2>
+      <form id="addForm" class="grid">
+        <input name="site" placeholder="Site" required />
+        <input name="username" placeholder="Username" required />
+        <input name="password" placeholder="Password" required />
+        <input name="notes" placeholder="Notes (optional)" />
+        <button type="submit">Add</button>
+      </form>
+      <div class="error" id="addError"></div>
+    </section>
+
+    <section class="card">
+      <h2>Saved</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Site</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Notes</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="/public/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Password Manager - Sign In</title>
+  <link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+  <div class="container auth">
+    <h1>Password Manager</h1>
+    <div class="cards">
+      <div class="card">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label>
+            Username
+            <input name="username" required minlength="3" />
+          </label>
+          <label>
+            Password
+            <input name="password" type="password" required minlength="6" />
+          </label>
+          <button type="submit">Login</button>
+          <div class="error" id="loginError"></div>
+        </form>
+      </div>
+      <div class="card">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+          <label>
+            Username
+            <input name="username" required minlength="3" />
+          </label>
+          <label>
+            Password
+            <input name="password" type="password" required minlength="6" />
+          </label>
+          <button type="submit">Create Account</button>
+          <div class="error" id="signupError"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const handleSubmit = (formId, url, errorId) => {
+      const form = document.getElementById(formId);
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const body = Object.fromEntries(fd.entries());
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        if (res.ok) {
+          window.location.href = '/app';
+        } else {
+          const data = await res.json().catch(() => ({}));
+          document.getElementById(errorId).textContent = data.error || 'Request failed';
+        }
+      });
+    };
+
+    handleSubmit('loginForm', '/api/login', 'loginError');
+    handleSubmit('signupForm', '/api/signup', 'signupError');
+  </script>
+</body>
+</html>

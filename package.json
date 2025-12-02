@@ -1,29 +1,20 @@
 {
-  "name": "local-vault",
+  "name": "password-manager-basic",
   "version": "1.0.0",
-  "description": "Group Project Repository for CSCE 469 Group 17",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GMIELAK/CSCE469Group17.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "Very basic password manager web app (local only)",
+  "main": "server.js",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/GMIELAK/CSCE469Group17/issues"
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npx nodemon server.js"
   },
-  "homepage": "https://github.com/GMIELAK/CSCE469Group17#readme",
-  "private": "true",
-  "workspaces": [
-    "frontend",
-    "backend"
-  ],
   "dependencies": {
-    "react-router-dom": "^7.9.5"
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-session": "^1.17.3",
+    "nedb-promises": "^6.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }

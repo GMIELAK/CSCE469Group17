@@ -1,46 +1,64 @@
-# CSCE469Group17 — Local Vault
+# Very Basic Password Manager (Local)
 
-This project is intended to run locally. The README defaults to PostgreSQL.
+A minimal web app for storing website credentials locally on your machine. Includes sign up, log in, log out, and CRUD for credentials (site, username, password, notes). No external services.
 
-## 1) Backend — install dependencies
+## Features
+- Sign up, log in, and log out (session-based)
+- Single-page app after login
+- List credentials in a table
+- Add, edit (inline), and delete credentials
+- Local, file-based persistence using `nedb-promises` (two files: `users.db`, `credentials.db`)
+
+## Quick Start (Windows PowerShell)
+1. Install Node.js (v18 or newer recommended): https://nodejs.org/
+2. In a PowerShell terminal, run from the project root:
 
 ```powershell
-cd local-vault/backend
 npm install
+npm start
 ```
 
-## 2) Configure the DB (Postgres — recommended)
+3. Open http://localhost:3000 in your browser.
 
-Create `local-vault/backend/.env` with this content (update user/password/host/port as needed):
-
-```env
-DATABASE_URL="postgresql://postgres:your_password@localhost:5432/local_vault?schema=public"
-JWT_SECRET="a_key"
-```
-
-## 3) Database
-
- The backend uses a small file-backed JSON store by default so you don't need Postgres to develop.
-
-
-## 4) Start the backend
+- Stop the server with `Ctrl + C` in the terminal.
+- For live-reload during development:
 
 ```powershell
 npm run dev
 ```
 
-Open http://localhost:3000 to verify the server is running.
+## Project Structure
+- `server.js` – Express server, auth and CRUD APIs, static hosting
+- `db.js` – Simple file-backed database using NeDB (users and credentials)
+- `public/` – Frontend files
+  - `index.html` – Login & sign up
+  - `app.html` – Main credentials UI
+  - `app.js` – Minimal frontend logic for fetching and inline edit/delete
+  - `styles.css` – Minimal styling
+- `data/` – Created at runtime for database files (`users.db`, `credentials.db`)
 
-## 5) Frontend — install and start
+## Environment
+- `PORT` – Optional. Default is `3000`.
 
-In a new terminal:
+Set it in PowerShell like this if desired:
 
 ```powershell
-cd local-vault/frontend
-npm install
-npm run dev
+$env:PORT = 4000; npm start
 ```
 
-Open the URL Vite prints (usually http://localhost:5173).
+## Notes & Limitations
+- For demo/education use only. Not production-ready.
+- Passwords are stored in plain text in the local database to keep the example simple.
+  - Do NOT store real passwords.
+  - A production app should encrypt secrets at rest and in transit.
+- Sessions use in-memory store; logging out or server restarts will clear sessions.
+- All data stays local on your machine; no external APIs/services.
 
-Which would you like me to do next?
+## API Overview (for reference)
+- `POST /api/signup` – body: `{ username, password }`
+- `POST /api/login` – body: `{ username, password }`
+- `POST /api/logout`
+- `GET /api/credentials`
+- `POST /api/credentials` – body: `{ site, username, password, notes? }`
+- `PUT /api/credentials/:id` – body: `{ site, username, password, notes? }`
+- `DELETE /api/credentials/:id`
