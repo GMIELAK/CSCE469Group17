@@ -1,0 +1,24 @@
+{
+  "name": "password-manager",
+  "version": "1.0.0",
+  "description": "A secure password manager application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "password",
+    "manager",
+    "security"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "express-session": "^1.18.2",
+    "json": "^11.0.0",
+    "sqlite3": "^5.1.6"
+  }
+}

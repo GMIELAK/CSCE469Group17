@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Auth Page -->
+    <div id="authPage" class="page">
+        <div class="auth-container">
+            <h1>🔐 Password Manager</h1>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchAuthTab('login')">Login</button>
+                <button class="tab-btn" onclick="switchAuthTab('signup')">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="loginUsername">Username:</label>
+                    <input type="text" id="loginUsername" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <p id="loginError" class="error-message"></p>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" class="auth-form">
+                <h2>Sign Up</h2>
+                <div class="form-group">
+                    <label for="signupUsername">Username:</label>
+                    <input type="text" id="signupUsername" name="username" placeholder="Choose a username" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" name="password" placeholder="At least 6 characters" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign Up</button>
+                <p id="signupError" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- App Page -->
+    <div id="appPage" class="page" style="display: none;">
+        <div class="container">
+            <header>
+                <div class="header-content">
+                    <h1>🔐 Password Manager</h1>
+                    <div class="user-info">
+                        <span id="currentUser"></span>
+                        <button id="logoutBtn" class="btn-logout">Logout</button>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="add-credential">
+                    <h2 id="formTitle">Add New Credential</h2>
+                    <form id="credentialForm">
+                        <div class="form-group">
+                            <label for="site">Site/Service:</label>
+                            <input type="text" id="site" name="site" placeholder="e.g., Gmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username/Email:</label>
+                            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" placeholder="Enter password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Notes (Optional):</label>
+                            <textarea id="notes" name="notes" placeholder="Add any notes..." rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" id="formSubmitBtn">Add Credential</button>
+                        <button type="button" class="btn-cancel" id="formCancelBtn" style="display: none;">Cancel</button>
+                    </form>
+                </section>
+
+                <section class="credentials-list">
+                    <h2>Saved Credentials</h2>
+                    <div id="credentialsList" class="list-container">
+                        <p class="loading">Loading credentials...</p>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2025 Password Manager. Keep your passwords secure.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
