@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1763653048083",
+    "username": "asdf",
+    "password": "$2b$10$rPX493iMyxKg6nJhp89fmunMgoVf4ionNxSFeJNEyGi5udp8nTUY2",
+    "credentials": [
+      {
+        "id": "1763653060163",
+        "site": "google",
+        "username": "test",
+        "password": "test",
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "id": "1763653080028",
+    "username": "test",
+    "password": "$2b$10$VBmGNeoGv4jUTkCNc9jMOuqxtQsbsU0A0fKX70aqRI9F5QK/L.Hey",
+    "credentials": []
+  },
+  {
+    "id": "1764002604771",
+    "username": "#jaVasCript:/*-/*`/*\\`/*'/*\"/**/(/* */oNcliCk=alert(5397) )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\\x3csVg/<sVg/oNloAd=alert(5397)//>\\x3e",
+    "password": "$2a$10$waPgZNBeFChc2ikTCW4YhumkXaWsxIfArZGmNu5I7k3p3yGN6ptTq",
+    "credentials": []
+  },
+  {
+    "id": "1764002608498",
+    "username": "#javascript:alert(5397)",
+    "password": "$2a$10$H9Fyro7/dh4ogH6Bdh10qOmgzoa5X2q39KVBWtFurBJIQKnoptBzK",
+    "credentials": []
+  },
+  {
+    "id": "1764002609279",
+    "username": "?name=abc#<img src=\"random.gif\" onerror=alert(5397)>",
+    "password": "$2a$10$LA4nfJilr3B1VvpJOd.SJumfIJXtoKjPsuCi25QJjWovQF0UYy01a",
+    "credentials": []
+  }
+]

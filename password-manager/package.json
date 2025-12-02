@@ -1,0 +1,22 @@
+{
+  "name": "password-manager",
+  "version": "1.0.0",
+  "description": "A basic password manager web app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-no-secrets": "^2.2.1",
+    "eslint-plugin-security": "^3.0.1",
+    "globals": "^16.5.0"
+  }
+}
