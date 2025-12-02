@@ -1,46 +1,50 @@
-# CSCE469Group17 — Local Vault
+# Password Manager
 
-This project is intended to run locally. The README defaults to PostgreSQL.
+A simple password manager web application with user authentication and credential management.
 
-## 1) Backend — install dependencies
+## Features
 
-```powershell
-cd local-vault/backend
-npm install
-```
+- User sign up, login, and logout.
+- Create, Read, Update, and Delete (CRUD) operations for passwords.
+- Credentials are saved locally in a JSON file.
 
-## 2) Configure the DB (Postgres — recommended)
+## Project Structure
 
-Create `local-vault/backend/.env` with this content (update user/password/host/port as needed):
+- `backend/`: Contains the Node.js/Express server.
+- `frontend/`: Contains the HTML, CSS, and JavaScript for the client-side application.
 
-```env
-DATABASE_URL="postgresql://postgres:your_password@localhost:5432/local_vault?schema=public"
-JWT_SECRET="a_key"
-```
+## Prerequisites
 
-## 3) Database
+- [Node.js](https://nodejs.org/) (which includes npm)
 
- The backend uses a small file-backed JSON store by default so you don't need Postgres to develop.
+## Running the Application
 
+1.  **Clone the repository:**
 
-## 4) Start the backend
+    ```bash
+    git clone https://github.com/GMIELAK/CSCE469Group17.git
+    cd CSCE469Group17
+    ```
 
-```powershell
-npm run dev
-```
+2.  **Install dependencies:**
 
-Open http://localhost:3000 to verify the server is running.
+    This command will install dependencies for both the root, backend and frontend.
 
-## 5) Frontend — install and start
+    ```bash
+    npm install
+    ```
 
-In a new terminal:
+3.  **Run the application:**
 
-```powershell
-cd local-vault/frontend
-npm install
-npm run dev
-```
+    This will start both the backend and frontend servers concurrently.
 
-Open the URL Vite prints (usually http://localhost:5173).
+    ```bash
+    npm run dev
+    ```
 
-Which would you like me to do next?
+    - The backend server will be running on `http://localhost:3000`.
+    - The frontend will be served on `http://localhost:8080`.
+
+4.  **Open your browser:**
+
+    Navigate to `http://localhost:8080` to use the application.
