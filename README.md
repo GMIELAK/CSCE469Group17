@@ -1,46 +1,60 @@
-# CSCE469Group17 — Local Vault
+# Minimal Password Manager
 
-This project is intended to run locally. The README defaults to PostgreSQL.
+A simple local web app for managing passwords. Features user sign up, login, logout, and CRUD for credentials (site, username, password, notes). No external services or APIs. All data is stored locally using SQLite.
 
-## 1) Backend — install dependencies
+## Features
+- User sign up, login, logout
+- Add, view, edit, and delete credentials
+- Each credential: site, username, password, optional notes
+- Minimal UI, all local
 
-```powershell
-cd local-vault/backend
+## Stack
+- Backend: Node.js, Express, SQLite
+- Frontend: Plain React (no build step)
+
+## Setup & Run
+
+### 1. Install dependencies
+
+Open a terminal in the `server` folder and run:
+
+```
 npm install
 ```
 
-## 2) Configure the DB (Postgres — recommended)
+Open a terminal in the `client` folder and run:
 
-Create `local-vault/backend/.env` with this content (update user/password/host/port as needed):
-
-```env
-DATABASE_URL="postgresql://postgres:your_password@localhost:5432/local_vault?schema=public"
-JWT_SECRET="a_key"
+```
+npm install react react-dom serve
 ```
 
-## 3) Database
+### 2. Start the backend
 
- The backend uses a small file-backed JSON store by default so you don't need Postgres to develop.
+In the `server` folder:
 
-
-## 4) Start the backend
-
-```powershell
-npm run dev
+```
+npm start
 ```
 
-Open http://localhost:3000 to verify the server is running.
+This starts the API server at http://localhost:npm4000
 
-## 5) Frontend — install and start
+### 3. Start the frontend
 
-In a new terminal:
+In the `client` folder:
 
-```powershell
-cd local-vault/frontend
-npm install
-npm run dev
+```
+npm start
 ```
 
-Open the URL Vite prints (usually http://localhost:5173).
+This serves the UI at http://localhost:3000
 
-Which would you like me to do next?
+### 4. Use the app
+
+- Open http://localhost:3000 in your browser.
+- Sign up for a new account, then log in.
+- Add, edit, or delete credentials.
+
+## Notes
+- All data is stored locally in `server/db.sqlite`.
+- No password recovery or advanced security features—this is a minimal demo.
+- For local/demo use only.
