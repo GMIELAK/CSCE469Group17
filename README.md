@@ -28,7 +28,7 @@ A simple password manager web application with user authentication and credentia
 
 2.  **Install dependencies:**
 
-    This command will install dependencies for both the root, backend and frontend.
+    This command will install dependencies for both the backend and frontend.
 
     ```bash
     npm install
@@ -43,8 +43,8 @@ A simple password manager web application with user authentication and credentia
     ```
 
     - The backend server will be running on `http://localhost:3000`.
-    - The frontend will be served on `http://localhost:8080`.
+    - The frontend will be served by Vite on `http://localhost:5173`.
 
 4.  **Open your browser:**
 
-    Navigate to `http://localhost:8080` to use the application.
+    Navigate to `http://localhost:5173` to use the application.

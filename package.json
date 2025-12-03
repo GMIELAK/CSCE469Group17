@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd backend && npm install && cd ../frontend && npm install",
     "start:backend": "cd backend && npm start",
-    "start:frontend": "cd frontend && npm start",
-    "dev": "npm-run-all --parallel start:backend start:frontend",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:frontend": "cd frontend && npm run dev",
+    "dev": "npm-run-all --parallel start:backend start:frontend"
   },
   "repository": {
     "type": "git",
